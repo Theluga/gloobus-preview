@@ -6,7 +6,9 @@ import configparser
 import os
 import sys
 import glob
-from gi.repository import Gtk, GConf, Gio
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, Gio
 import signal
 import gettext
 #import config
@@ -163,7 +165,7 @@ class GUI:
 #==================================== GLOBAL FUNCTIONS ===============================================#		
 #=================== DEFAULT CONFIGURATION ================== #			
 def config_default():
-	config = configparser.SafeConfigParser()
+	config = configparser.ConfigParser()
 
 	config.add_section('Main')
 	config.add_section('Theme')
